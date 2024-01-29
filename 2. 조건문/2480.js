@@ -29,7 +29,6 @@ const BigNum = [Fisrt, Second, Third].sort(function (a, b) {
   return b - a;
 })[0];
 
-console.log(BigNum);
 function cal(a, b, c) {
   if (a === b && b === c) {
     console.log(10000 + a * 1000);
