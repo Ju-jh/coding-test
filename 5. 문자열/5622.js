@@ -21,23 +21,30 @@
 출력
 첫째 줄에 다이얼을 걸기 위해서 필요한 최소 시간을 출력한다. */
 
-// const inputData = require('fs').readFileSync(0, 'utf8').toString().trim().split('')
-const dial = [
-  [],
-  [],
-  [],
-  ['A', 'B', 'C'],
-  ['D', 'E', 'F'],
-  ['G', 'H', 'I'],
-  ['J', 'K', 'L'],
-  ['M', 'N', 'O'],
-  ['P', 'Q', 'R', 'S'],
-  ['T', 'U', 'V'],
-  ['W', 'X', 'Y', 'Z'],
-];
+const inputData = require('fs')
+  .readFileSync(0, 'utf8')
+  .toString()
+  .trim()
+  .split('');
+const alphabets = {
+  ABC: 3,
+  DEF: 4,
+  GHI: 5,
+  JKL: 6,
+  MNO: 7,
+  PQRS: 8,
+  TUV: 9,
+  WXYZ: 10,
+};
 
 let sum = 0;
 
-console.log(dial.find('A'));
+for (let i = 0; i < inputData.length; ++i) {
+  for (key in alphabets) {
+    if (key.includes(inputData[i])) {
+      sum += alphabets[key];
+    }
+  }
+}
 
-for (let i = 0; i < inputData.length; i++) {}
+console.log(sum);
