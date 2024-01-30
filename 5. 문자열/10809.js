@@ -11,4 +11,48 @@
 
 만약, 어떤 알파벳이 단어에 포함되어 있지 않다면 -1을 출력한다. 단어의 첫 번째 글자는 0번째 위치이고, 두 번째 글자는 1번째 위치이다. */
 
-const inputData = require('fs').readFileSync(0, 'utf8').toString().trim();
+const inputData = require('fs')
+  .readFileSync(0, 'utf8')
+  .toString()
+  .trim()
+  .split('');
+
+const alphabet = [
+  'a',
+  'b',
+  'c',
+  'd',
+  'e',
+  'f',
+  'g',
+  'h',
+  'i',
+  'j',
+  'k',
+  'l',
+  'm',
+  'n',
+  'o',
+  'p',
+  'q',
+  'r',
+  's',
+  't',
+  'u',
+  'v',
+  'w',
+  'x',
+  'y',
+  'z',
+];
+
+let arr = Array(26).fill(-1);
+
+for (let i = 0; i < inputData.length; i++) {
+  let idx = alphabet.indexOf(inputData[i]);
+  if (arr[idx] === -1) {
+    arr[idx] = i;
+  }
+}
+
+console.log(arr.join(' '));
