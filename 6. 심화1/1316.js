@@ -11,10 +11,24 @@
 출력
 첫째 줄에 그룹 단어의 개수를 출력한다. */
 
-// const inputData = require('fs').readFileSync(0, 'utf8').toString().trim().split('\n')
+const inputData = require('fs')
+  .readFileSync(0, 'utf8')
+  .toString()
+  .trim()
+  .split('\n');
 
-// const N = Number(inputData[0])
+const N = Number(inputData[0]);
+let count = N;
+let word;
 
-// for (let i = 1; i <= N; i++){
-//   inputData[i].
-// }
+for (let i = 1; i <= N; i++) {
+  word = inputData[i];
+  for (let j = 0; j < word.length - 1; j++) {
+    if (word[j] != word[j + 1] && !!word.slice(j + 1).includes(word[j])) {
+      count--;
+      break;
+    }
+  }
+}
+
+console.log(count);
