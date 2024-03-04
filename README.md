@@ -5,7 +5,6 @@
 node 파일이름.js
 
 # 단계별 문제
-
 https://www.acmicpc.net/step
 
 | 번호 | 주제            | 설명                                                    | 상태     | 난이도 | 완료한 문제 수 |
